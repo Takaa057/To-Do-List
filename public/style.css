@@ -1,0 +1,30 @@
+.container {
+    width: 80%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #f4f4f4;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin: 0 -15px; /* Untuk mengimbangi padding kolom */
+}
+
+.col-12.custom {
+    background-color: #f4f4f4;
+    text-align: center;
+    padding: 20px;
+    border: 1px solid #ccc;
+}
