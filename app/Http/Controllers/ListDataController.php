@@ -47,27 +47,28 @@ class ListDataController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Lists $lists, $id)
+    public function edit(Lists $lists)
     {
-        $lists = Lists::findOrFail($id);
+        // $lists = Lists::findOrFail($id);
         return view('list.edit', compact('lists'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(ListRequest $request, Lists $lists)
+    public function update(Request $request, Lists $lists)
     {
-        // dd($request->validated());
-        $updated = $lists->update($request->validated());
+        $validated = $request->validate([
+            'nama' => 'required|string|max:255',
+            'status' => 'required|string|in:selesai,belum',
+            'prioritas' => 'required|string|in:urgent,hari_ini,tidak_wajib',
+            'tanggal' => 'required|date'
+        ]);
 
-        if ($updated) {
-            // Jika update berhasil
-            return redirect()->route('list.index');
-        } else {
-            // Jika update gagal
-            return redirect()->route('list.create')->with('error', 'Data gagal diperbarui');
-        }
+        $lists->update($validated);
+        dd($request);
+        // $lists->update($request->validated());
+            return redirect()->route('list.index')->with('error', 'Data diperbarui');
     }
 
     /**

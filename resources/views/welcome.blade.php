@@ -14,6 +14,7 @@
                 <h1 class="text-center mt-4 mb-3">Selamat Datang</h1>
                 <div class="d-flex justify-content-between">
                     <a href="{{ route('list.index') }}" class="btn btn-primary mb-3">Amyo Simni</a>
+                    <a href="{{ route('task.index') }}" class="btn btn-primary mb-3">Amyo Simni</a>
                 </div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
