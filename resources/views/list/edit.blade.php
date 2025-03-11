@@ -13,7 +13,7 @@
 
                 <h1 class="text-center mt-4 mb-3">Tambahkan Data</h1>
 
-                <form action="{{ route('list.update', $lists->id ) }}" method="POST">
+                <form action="{{ route('list.update', $lists->id) }}" method="POST">
                     @csrf
                     @method('PUT')                  
                     <div class="form-group">
